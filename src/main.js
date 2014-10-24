@@ -37,6 +37,7 @@ var learnTeacherController = function($scope, $document, $translate) {
   $scope.identify = this.identify.bind(this);
   $scope.readyToPlay = this.readyToPlay.bind(this);
   $scope.submitAnswer = this.submitAnswer.bind(this);
+  $scope.sendConfig = this.sendConfig.bind(this);
   $scope.testAnimate = function($event) {
     console.log("testAnimate: element ", $event);
     event.target.className += " animated bounce";
@@ -49,7 +50,7 @@ var learnTeacherController = function($scope, $document, $translate) {
   this.gameStarted = false;
   this.receiverAvailable = false;
   this.sessionConnected = false;
-  this.config = {};
+  this.config = null;
 }
 
 learnTeacherController.prototype = {
@@ -170,6 +171,14 @@ learnTeacherController.prototype = {
     var command = {
       command: 'readyToPlay',
       value: true
+    };
+    this.sendMessage(command);
+  },
+
+  sendConfig: function() {
+    var command = {
+      command: 'newConfig',
+      config: this.config
     };
     this.sendMessage(command);
   },

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="LearnTeacherApp">
 	<head>
-		<title>Learn sender</title>
+		<title>{{"TITLE"|translate}}</title>
 		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
 		<link rel="stylesheet" type="text/css" href="vendor/daneden/animate.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -64,10 +64,16 @@
 				</md-card>
 				<!-- Questions Pane -->
 				<md-card  flex id="config-block" ng-show="learnTeacher.config">
-					<div layout="horizontal" layout-align="center">
-						<textarea flex>
-							{{learnTeacher.config}}
-						</textarea>
+					<div>
+						<md-checkbox ng-model="learnTeacher.config.operatorAdd" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_ADD_LABEL'|translate}}">
+						{{'OPERATOR_ADD_LABEL'|translate}}
+						</md-checkbox>
+						<md-checkbox ng-model="learnTeacher.config.operatorSub" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_SUB_LABEL'|translate}}">
+						{{'OPERATOR_SUB_LABEL'|translate}}
+						</md-checkbox>
+						<md-checkbox ng-model="learnTeacher.config.operatorMult" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_MULT_LABEL'|translate}}">
+						{{'OPERATOR_MULT_LABEL'|translate}}
+						</md-checkbox>
 					</div>
 				</md-card>
 				<div id="winner" ng-show="learnTeacher.winner">

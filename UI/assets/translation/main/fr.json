@@ -6,5 +6,8 @@
     "READY": "Prêt !",
     "ANSWER": "Réponds ici",
     "WINNER": "Vainqueur :",
-    "WELCOME": "Bienvenue sur LearnCast, cher professeur."
+    "WELCOME": "Bienvenue sur LearnCast, cher professeur.",
+    "OPERATOR_ADD_LABEL": "Additions",
+    "OPERATOR_SUB_LABEL": "Soustractions",
+    "OPERATOR_MULT_LABEL": "Multiplications"
 }

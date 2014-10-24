@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="LearnTeacherApp">
+	<head>
+		<title>Learn sender</title>
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/daneden/animate.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		
+		<!-- Bower dependencies -->
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/hammerjs/hammer.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-translate/angular-translate.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+		<script src="bower_components/messageformat/messageformat.js"></script>
+		<script src="bower_components/messageformat/locale/en.js"></script>
+		<script src="bower_components/messageformat/locale/fr.js"></script>
+		<script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js"></script>
+		<!-- / Bower dependencies -->
+		
+		<script type="text/javascript" src="vendor/kevingaudin/monsterid/monsterid.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+		<script type="text/javascript" src="src/main.js"></script>
+		<script type="text/javascript" src="src/service.monsterid.js"></script>
+	</head>
+	<body ng-controller="learnTeacherController as learnTeacher">
+		<div layout="vertical">
+			<!-- Toolbar -->
+			<md-toolbar class="md-theme-light">
+				<div class="md-toolbar-tools">
+					<span translate='TITLE'></span>
+					<!-- fill up the space between left and right area -->
+			      	<span flex></span>
+
+
+					<div ng-hide="learnTeacher.receiverAvailable" translate="RECEIVER_SEARCH"></div>
+					<md-button ng-show="learnTeacher.receiverAvailable && !learnTeacher.sessionConnected" ng-click="startAppSession()">
+						<img src="UI/assets/icons/material/cast.svg">
+					</md-button>
+
+		    		<md-button ng-click="stopApp()" ng-show="learnTeacher.sessionConnected">
+						<img src="UI/assets/icons/material/cast-connected.svg">
+			    	</md-button>
+				</div>				
+			</md-toolbar>
+
+			<md-content layout="vertical" layout-sm="horizontal">
+				<!-- Player pane -->
+				<md-card flex id="player-pane">
+					<div layout="vertical" layout-align="center center">
+						<div layout="vertical">
+						<section layout="horizontal" layout-align="center">
+							<img monsterid="{{learnTeacher.name}}" title="{{learnTeacher.name}}" class="avatar"/>
+							<div layout="vertical" layout-align="center">
+								<label translate="PLAYER_NAME"></label>
+								<input type="text" ng-model="learnTeacher.name" ng-change="identify()" />
+							</div>
+						</section>
+						<md-button class="md-button-raised md-button-colored" ng-show="learnTeacher.sessionConnected" ng-click="readyToPlay()" ng-disabled="learnTeacher.gameStarted">{{'READY'|translate}}</md-button>
+						</div>
+					</div>
+				</md-card>
+				<!-- Questions Pane -->
+				<md-card  flex id="question-block" ng-show="learnTeacher.gameStarted">
+					<div layout="horizontal" layout-align="center">
+						<div layout="vertical" layout-align="center">
+							<h2 id="question">{{learnTeacher.question}}</h2>
+							<input type="text" ng-model="learnTeacher.answer" ng-change="submitAnswer()" id="answer-field" ng-class="{ 'answerOK': learnTeacher.answerOK }" class="" placeholder="{{'ANSWER'|translate}}">
+						</div>
+					</div>
+				</md-card>
+				<div id="winner" ng-show="learnTeacher.winner">
+					{{"WINNER" | translate}} {{learnTeacher.winner.name}}
+				</div>
+			</md-content>
+		</div>
+	</body>
+</html>

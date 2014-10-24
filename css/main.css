@@ -1,0 +1,39 @@
+
+.avatar {
+	width: 5em;
+	height: 5em;
+	background: black;
+	border-style: solid;
+	border-radius: 1em;
+	border-width: 0.2em;
+	border-color: transparent;
+	margin: 1em;
+}
+
+#winner img.avatar {
+	
+}
+
+md-button img {
+	height: 1em;
+	color: white;
+	fill: currentColor;
+	stroke: currentColor;
+}
+
+#answer-field {
+	font-size: 3em;
+	font-weight: bold;
+	color: #009;
+	border: none;
+	text-align: center;
+}
+
+#answer-field::-webkit-input-placeholder {
+	padding-top: 0.3em;
+}
+
+#answer-field.answerOK-add {
+	-webkit-animation: bounce 1s;
+	animation: bounce 1s;
+}

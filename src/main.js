@@ -47,11 +47,9 @@ var learnTeacherController = function($scope, $document, $translate) {
     _this.name = player + Math.floor((Math.random() * 1000) + 1);
   });
   this.gameStarted = false;
-  this.question = "Combien font 3 * 4 / 32 ?";
-  this.answer = "";
-  this.answerOK = false;
   this.receiverAvailable = false;
   this.sessionConnected = false;
+  this.config = {};
 }
 
 learnTeacherController.prototype = {
@@ -187,11 +185,11 @@ learnTeacherController.prototype = {
         console.log("should identify");
         this.identify();
         break;
-      case "question":
+      case "currentConfig":
         var _this = this;
         this._scope.$apply(function() {
-          _this.ask(event.question);
-          console.log("Quesion asked: ", event.question);
+          console.log("Received current config", event.config);
+          _this.config = event.config;
         });
         break;
       case "endGame":

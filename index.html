@@ -63,12 +63,11 @@
 					</div>
 				</md-card>
 				<!-- Questions Pane -->
-				<md-card  flex id="question-block" ng-show="learnTeacher.gameStarted">
+				<md-card  flex id="config-block" ng-show="learnTeacher.config">
 					<div layout="horizontal" layout-align="center">
-						<div layout="vertical" layout-align="center">
-							<h2 id="question">{{learnTeacher.question}}</h2>
-							<input type="text" ng-model="learnTeacher.answer" ng-change="submitAnswer()" id="answer-field" ng-class="{ 'answerOK': learnTeacher.answerOK }" class="" placeholder="{{'ANSWER'|translate}}">
-						</div>
+						<textarea flex>
+							{{learnTeacher.config}}
+						</textarea>
 					</div>
 				</md-card>
 				<div id="winner" ng-show="learnTeacher.winner">

@@ -65,13 +65,13 @@
 				<!-- Questions Pane -->
 				<md-card  flex id="config-block" ng-show="learnTeacher.config">
 					<div>
-						<md-checkbox ng-model="learnTeacher.config.operatorAdd" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_ADD_LABEL'|translate}}">
+						<md-checkbox ng-model="learnTeacher.config.questions.operatorAdd" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_ADD_LABEL'|translate}}">
 						{{'OPERATOR_ADD_LABEL'|translate}}
 						</md-checkbox>
-						<md-checkbox ng-model="learnTeacher.config.operatorSub" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_SUB_LABEL'|translate}}">
+						<md-checkbox ng-model="learnTeacher.config.questions.operatorSub" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_SUB_LABEL'|translate}}">
 						{{'OPERATOR_SUB_LABEL'|translate}}
 						</md-checkbox>
-						<md-checkbox ng-model="learnTeacher.config.operatorMult" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_MULT_LABEL'|translate}}">
+						<md-checkbox ng-model="learnTeacher.config.questions.operatorMult" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_MULT_LABEL'|translate}}">
 						{{'OPERATOR_MULT_LABEL'|translate}}
 						</md-checkbox>
 					</div>

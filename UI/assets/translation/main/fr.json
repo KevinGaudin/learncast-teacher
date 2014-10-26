@@ -9,5 +9,6 @@
     "WELCOME": "Bienvenue sur LearnCast, cher professeur.",
     "OPERATOR_ADD_LABEL": "Additions",
     "OPERATOR_SUB_LABEL": "Soustractions",
-    "OPERATOR_MULT_LABEL": "Multiplications"
+    "OPERATOR_MULT_LABEL": "Multiplications",
+    "QUESTIONS_PER_ROUND": "Questions par tour:"
 }

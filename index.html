@@ -47,24 +47,16 @@
 			</md-toolbar>
 
 			<md-content layout="vertical" layout-sm="horizontal">
-				<!-- Player pane -->
-				<md-card flex id="player-pane">
-					<div layout="vertical" layout-align="center center">
-						<div layout="vertical">
-						<section layout="horizontal" layout-align="center">
-							<img monsterid="{{learnTeacher.name}}" title="{{learnTeacher.name}}" class="avatar"/>
-							<div layout="vertical" layout-align="center">
-								<label translate="PLAYER_NAME"></label>
-								<input type="text" ng-model="learnTeacher.name" ng-change="identify()" />
-							</div>
-						</section>
-						<md-button class="md-button-raised md-button-colored" ng-show="learnTeacher.sessionConnected" ng-click="readyToPlay()" ng-disabled="learnTeacher.gameStarted">{{'READY'|translate}}</md-button>
-						</div>
-					</div>
-				</md-card>
-				<!-- Questions Pane -->
+				<!-- Configuration Pane -->
 				<md-card  flex id="config-block" ng-show="learnTeacher.config">
-					<div>
+					<form>
+						<md-button class="md-button-raised md-button-colored" ng-show="learnTeacher.sessionConnected" ng-click="readyToPlay()" ng-disabled="learnTeacher.gameStarted">{{'READY'|translate}}</md-button>
+
+						<md-input-group>
+							<label for="global_nbQuestions">{{'QUESTIONS_PER_ROUND'|translate}}</label>
+							<md-input id="global_nbQuestions" ng-model="learnTeacher.config.global.nbQuestions" ng-change="learnTeacher.sendConfig()"></md-input>
+						</md-input-group>
+
 						<md-checkbox ng-model="learnTeacher.config.questions.operatorAdd" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_ADD_LABEL'|translate}}">
 						{{'OPERATOR_ADD_LABEL'|translate}}
 						</md-checkbox>
@@ -74,7 +66,7 @@
 						<md-checkbox ng-model="learnTeacher.config.questions.operatorMult" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_MULT_LABEL'|translate}}">
 						{{'OPERATOR_MULT_LABEL'|translate}}
 						</md-checkbox>
-					</div>
+					</form>
 				</md-card>
 				<div id="winner" ng-show="learnTeacher.winner">
 					{{"WINNER" | translate}} {{learnTeacher.winner.name}}

@@ -57,15 +57,19 @@
 							<md-input id="global_nbQuestions" ng-model="learnTeacher.config.global.nbQuestions" ng-change="learnTeacher.sendConfig()"></md-input>
 						</md-input-group>
 
-						<md-checkbox ng-model="learnTeacher.config.questions.operatorAdd" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_ADD_LABEL'|translate}}">
+						<md-checkbox ng-model="learnTeacher.config.questions.calculation.operatorAdd" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_ADD_LABEL'|translate}}">
 						{{'OPERATOR_ADD_LABEL'|translate}}
 						</md-checkbox>
-						<md-checkbox ng-model="learnTeacher.config.questions.operatorSub" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_SUB_LABEL'|translate}}">
+						<md-checkbox ng-model="learnTeacher.config.questions.calculation.operatorSub" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_SUB_LABEL'|translate}}">
 						{{'OPERATOR_SUB_LABEL'|translate}}
 						</md-checkbox>
-						<md-checkbox ng-model="learnTeacher.config.questions.operatorMult" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_MULT_LABEL'|translate}}">
+						<md-checkbox ng-model="learnTeacher.config.questions.calculation.operatorMult" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_MULT_LABEL'|translate}}">
 						{{'OPERATOR_MULT_LABEL'|translate}}
 						</md-checkbox>
+						<md-input-group>
+							<label for="questions_multOperands1">{{'MULT_OPERANDS'|translate}}</label>
+							<md-input id="questions_multOperands1" ng-model="learnTeacher.config.questions.calculation.multOperands1" ng-change="learnTeacher.sendConfig()"></md-input>
+						</md-input-group>
 					</form>
 				</md-card>
 				<div id="winner" ng-show="learnTeacher.winner">

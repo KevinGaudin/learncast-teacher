@@ -21,8 +21,8 @@ md-card {
 	
 }
 
-md-button img {
-	height: 1em;
+.md-button img {
+	height: 1.7em;
 	color: white;
 	fill: currentColor;
 	stroke: currentColor;

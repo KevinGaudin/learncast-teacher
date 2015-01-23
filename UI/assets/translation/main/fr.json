@@ -11,5 +11,6 @@
     "OPERATOR_SUB_LABEL": "Soustractions",
     "OPERATOR_MULT_LABEL": "Multiplications",
     "QUESTIONS_PER_ROUND": "Questions par tour:",
-    "MULT_OPERANDS": "Tables de multiplications"
+    "MULT_OPERANDS": "Tables de multiplications",
+    "GENERATOR_TYPING_LABEL" : "Ecriture"
 }

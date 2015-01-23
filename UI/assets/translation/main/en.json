@@ -11,5 +11,6 @@
     "OPERATOR_SUB_LABEL": "Subtractions",
     "OPERATOR_MULT_LABEL": "Multiplications",
     "QUESTIONS_PER_ROUND": "Questions per round",
-    "MULT_OPERANDS": "Multiplication tables"
+    "MULT_OPERANDS": "Multiplication tables",
+    "GENERATOR_TYPING_LABEL" : "Typing"
  }

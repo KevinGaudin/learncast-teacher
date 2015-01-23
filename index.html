@@ -26,7 +26,7 @@
 		<script type="text/javascript" src="src/service.monsterid.js"></script>
 	</head>
 	<body ng-controller="learnTeacherController as learnTeacher">
-		<div layout="vertical">
+		<div layout="column" layout-fill>
 			<!-- Toolbar -->
 			<md-toolbar class="md-theme-light">
 				<div class="md-toolbar-tools">
@@ -56,6 +56,10 @@
 							<label for="global_nbQuestions">{{'QUESTIONS_PER_ROUND'|translate}}</label>
 							<md-input id="global_nbQuestions" ng-model="learnTeacher.config.global.nbQuestions" ng-change="learnTeacher.sendConfig()"></md-input>
 						</md-input-group>
+
+						<md-checkbox ng-model="learnTeacher.config.questions.typing.enabled" ng-change="learnTeacher.sendConfig()" aria-label="{{'GENERATOR_TYPING_LABEL'|translate}}">
+						{{'GENERATOR_TYPING_LABEL'|translate}}
+						</md-checkbox>
 
 						<md-checkbox ng-model="learnTeacher.config.questions.calculation.operatorAdd" ng-change="learnTeacher.sendConfig()" aria-label="{{'OPERATOR_ADD_LABEL'|translate}}">
 						{{'OPERATOR_ADD_LABEL'|translate}}
